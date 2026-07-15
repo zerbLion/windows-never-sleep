@@ -52,6 +52,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Failed to compile Install.exe.' }
 
 New-Item -ItemType Directory -Path (Join-Path $packageDirectory 'docs') -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $workspaceRoot 'README.md') -Destination $packageDirectory
+Copy-Item -LiteralPath (Join-Path $workspaceRoot 'README.zh-CN.md') -Destination $packageDirectory
 Copy-Item -LiteralPath (Join-Path $workspaceRoot 'LICENSE') -Destination $packageDirectory
 Copy-Item -LiteralPath (Join-Path $workspaceRoot 'docs\TECHNICAL.md') -Destination (Join-Path $packageDirectory 'docs')
 Copy-Item -LiteralPath (Join-Path $workspaceRoot 'docs\BUILDING.md') -Destination (Join-Path $packageDirectory 'docs')
